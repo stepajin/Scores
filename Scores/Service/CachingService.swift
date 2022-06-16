@@ -19,7 +19,7 @@ final class CachingService: APIService {
     }
 
     func fetch<R: Resource>(_ resource: R.Type, endpoint: Endpoint) async throws -> R {
-        let (resource, _) = try await fetchFromSources(resource, endpoint: endpoint)
+        let (resource, _) = try await fetchAndCache(resource, endpoint: endpoint)
         return resource
     }
     

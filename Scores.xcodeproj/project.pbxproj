@@ -41,6 +41,7 @@
 		9CA219E628589A290039CAC3 /* CompetitionsListRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA219E528589A290039CAC3 /* CompetitionsListRowCell.swift */; };
 		9CA219EA28589D9D0039CAC3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA219E928589D9D0039CAC3 /* NetworkService.swift */; };
 		9CA219ED28589E850039CAC3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA219EC28589E850039CAC3 /* Model.swift */; };
+		9CACE11D285B49B5009519CA /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 9CACE11C285B49B5009519CA /* GRDB */; };
 		9CB960C9285A3F0A00EE745A /* ResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB960C8285A3F0A00EE745A /* ResourceTests.swift */; };
 		9CB960CB285A3F6700EE745A /* FlagMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB960CA285A3F6700EE745A /* FlagMapTests.swift */; };
 		9CB960CD285A3FE300EE745A /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB960CC285A3FE300EE745A /* UserDefaultsTests.swift */; };
@@ -143,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEA47C72857D65100AD7328 /* SVGKitSwift in Frameworks */,
+				9CACE11D285B49B5009519CA /* GRDB in Frameworks */,
 				9CEA47C42857D10900AD7328 /* Kingfisher in Frameworks */,
 				9C3761C8285A0E63007D2BB9 /* Swinject in Frameworks */,
 				9C20B230285A25F600325847 /* GRDB in Frameworks */,
@@ -431,6 +433,7 @@
 				9CEA47C62857D65100AD7328 /* SVGKitSwift */,
 				9C3761C7285A0E63007D2BB9 /* Swinject */,
 				9C20B22F285A25F600325847 /* GRDB */,
+				9CACE11C285B49B5009519CA /* GRDB */,
 			);
 			productName = Scores;
 			productReference = 9C8B5D02285790E100FD062D /* Scores.app */;
@@ -509,6 +512,7 @@
 				9CEA47C52857D65100AD7328 /* XCRemoteSwiftPackageReference "SVGKit" */,
 				9C3761C6285A0E63007D2BB9 /* XCRemoteSwiftPackageReference "Swinject" */,
 				9C20B22E285A25F600325847 /* XCRemoteSwiftPackageReference "GRDB" */,
+				9CACE11B285B49B5009519CA /* XCRemoteSwiftPackageReference "GRDB" */,
 			);
 			productRefGroup = 9C8B5D03285790E100FD062D /* Products */;
 			projectDirPath = "";
@@ -956,6 +960,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		9CACE11B285B49B5009519CA /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9CEA47C22857D10900AD7328 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -984,6 +996,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C3761C6285A0E63007D2BB9 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		9CACE11C285B49B5009519CA /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C20B22E285A25F600325847 /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
 		};
 		9CEA47C32857D10900AD7328 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
