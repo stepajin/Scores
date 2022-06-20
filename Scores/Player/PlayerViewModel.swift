@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class PlayerViewModel: ObservableObject {
     @Published var player: Player
     @Published var team: Team?
@@ -33,8 +34,6 @@ final class PlayerViewModel: ObservableObject {
     
     private func processFetchedTeam(_ team: Team?) {
         guard let team = team else { return }
-        DispatchQueue.main.async {
-            self.team = team
-        }
+        self.team = team
     }
 }

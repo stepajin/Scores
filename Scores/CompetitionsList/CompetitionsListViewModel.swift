@@ -11,6 +11,7 @@ protocol CompetitionsListViewModelDelegate: AnyObject {
     func routeToCompetition(_ competition: Competition)
 }
 
+@MainActor
 final class CompetitionsListViewModel {
     weak var delegate: CompetitionsListViewModelDelegate?
     
@@ -103,8 +104,6 @@ final class CompetitionsListViewModel {
     }
     
     private func updateCompetitionSections(_ sections: [CompetitionsListSection]) {
-        DispatchQueue.main.async {
-            self.onCompetitionsUpdated?(sections)
-        }
+        onCompetitionsUpdated?(sections)
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+@MainActor
 final class AppRouter {
     private let window: UIWindow
     

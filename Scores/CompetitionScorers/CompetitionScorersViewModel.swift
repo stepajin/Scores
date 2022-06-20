@@ -11,6 +11,7 @@ protocol CompetitionScorersViewModelDelegate: AnyObject {
     func routeToScorer(_ scorer: Scorer)
 }
 
+@MainActor
 final class CompetitionScorersViewModel {
     let competition: Competition
     
@@ -43,8 +44,6 @@ final class CompetitionScorersViewModel {
     
     private func processScorers(_ scorers: Scorers) {
         self.scorers = scorers
-        DispatchQueue.main.async {
-            self.onScorersUpdated?(scorers.scorers)
-        }
+        self.onScorersUpdated?(scorers.scorers)
     }
 }

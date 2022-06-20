@@ -11,6 +11,7 @@ protocol CompetitionStandingsViewModelDelegate: AnyObject {
     func routeToTeam(_ team: Team)
 }
 
+@MainActor
 final class CompetitionStandingsViewModel {
     let competition: Competition
     
@@ -44,8 +45,6 @@ final class CompetitionStandingsViewModel {
     private func processSeasonStandings(_ seasonStandings: SeasonStandings) {
         guard let standings = seasonStandings.standings.first else { return }
         self.standings = standings
-        DispatchQueue.main.async {
-            self.onTableUpdated?(standings.table)
-        }
+        self.onTableUpdated?(standings.table)
     }
 }

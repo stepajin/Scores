@@ -11,6 +11,7 @@ protocol TeamSquadViewModelDelegate: AnyObject {
     func routeToPlayer(_ player: Player, team: Team)
 }
 
+@MainActor
 final class TeamSquadViewModel {
     
     weak var delegate: TeamSquadViewModelDelegate?
@@ -70,9 +71,7 @@ final class TeamSquadViewModel {
     }
     
     private func updateSquad(_ squad: [TeamSquadSection]) {
-        DispatchQueue.main.async {
-            self.onSquadUpdated?(squad)
-        }
+        onSquadUpdated?(squad)
     }
     
     private func sortKey(_ position: String) -> Int {
