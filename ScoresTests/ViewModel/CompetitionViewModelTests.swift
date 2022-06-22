@@ -17,6 +17,7 @@ class CompetitionViewModelTests: XCTestCase {
         UserDefaults.standard.remove(from: .main)
     }
     
+    @MainActor
     func testToggleFavorite() {
         let viewModel = CompetitionViewModel(competition: competition)
         XCTAssertFalse(viewModel.isFavorite)

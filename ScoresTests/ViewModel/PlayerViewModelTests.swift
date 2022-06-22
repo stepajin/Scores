@@ -22,6 +22,7 @@ class PlayerViewModelTests: XCTestCase {
         }
     }
     
+    @MainActor
     func testTeamFetch() {
         let exp = XCTestExpectation()
 
